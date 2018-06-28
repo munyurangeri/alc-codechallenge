@@ -1,0 +1,6 @@
+{
+    "files": ["./src/**/*.{html,htm,css,js,vue}"],
+    "server" : { "baseDir" : "./public" },
+    "https" : false,
+    "browser" : ["google-chrome", "firefox"]
+}
