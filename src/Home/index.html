@@ -1,0 +1,26 @@
+<div class="page-container">
+    <md-app md-waterfall md-mode="fixed-last">
+      <md-app-toolbar class="md-large md-dense md-primary">
+        <div class="md-toolbar-row">
+          <div class="md-toolbar-section-start">
+            <span class="md-title">Bazaar</span>
+          </div>
+          <div class="md-toolbar-section-end">
+            <router-link to="/wallet" class="md-icon-button">
+              <md-icon>monetization_on</md-icon>
+            </router-link>
+          </div>
+        </div>
+        <div class="md-toolbar-row">
+          <md-tabs class="md-primary" md-alignment="fixed" md-sync-route>
+            <md-tab id="tab-home" md-label="buy" to="/home/buy"></md-tab>
+            <md-tab id="tab-pages" md-label="sell" to="/home/offers"></md-tab>
+            <md-tab id="tab-posts" md-label="transactions" to="/home/responses"></md-tab>
+          </md-tabs>
+        </div>
+      </md-app-toolbar>
+      <md-app-content>
+            <router-view></router-view>
+      </md-app-content>
+    </md-app>
+  </div>

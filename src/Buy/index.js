@@ -11,7 +11,7 @@
 // // Vue.use(MdIcon);
 
 export default {
-    name: 'Converter',
+    name: 'Buy',
     data() {
         return {}
     }

@@ -1,8 +1,8 @@
 import Vue from 'vue';
-import { MdApp, MdContent, MdToolbar, MdTabs, MdButton, MdIcon, MdCard } from 'vue-material/dist/components';
+import { MdApp, MdContent, MdToolbar, MdTabs, MdButton } from 'vue-material/dist/components';
 // import VueMaterial from 'vue-material';
 import 'vue-material/dist/vue-material.min.css';
-import 'vue-material/dist/theme/default.css';
+import 'vue-material/dist/theme/default.css'
 
 
 // Vue.use(VueMaterial);
@@ -11,8 +11,6 @@ Vue.use(MdContent);
 Vue.use(MdToolbar);
 Vue.use(MdTabs);
 Vue.use(MdButton);
-Vue.use(MdIcon);
-Vue.use(MdCard);
 
 
 if (navigator.serviceWorker) {
@@ -24,8 +22,7 @@ if (navigator.serviceWorker) {
 }
 
 export default {
-    name: 'RootComponent',
-    
+    name: 'Home',
     data() {
         return {}
     }
