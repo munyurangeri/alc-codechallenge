@@ -10,17 +10,14 @@
 }
 
 .md-app {
-    max-height: 400px;
+    max-height: 800px;
     border: 1px solid rgba(#000, .12);
 }
 
-/* .empty-space {
-    width: 50%;
-    margin: 4px;
-    display: inline-block;
-    vertical-align: top;
+.left-margin {
+    margin-left: 8px;
 }
-
+/* 
 
 
 .md-layout-item {

@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("console.log('Yo!');\n\n//# sourceURL=webpack:///./src/sw/index.js?");
+eval("var staticCacheName = 'bazaar-static-v2';\nvar allCaches = [staticCacheName];\n\nself.addEventListener('install', function (event) {\n  event.waitUntil(caches.open(staticCacheName).then(function (cache) {\n    return cache.addAll(['/index.html', '/main.js', 'https://fonts.gstatic.com/s/roboto/v15/2UX7WLTfW3W8TclTUvlFyQ.woff', 'https://fonts.gstatic.com/s/roboto/v15/d-6IYplOFocCacKzxwXSOD8E0i7KZn-EPnyo3HZu7kw.woff']);\n  }));\n});\n\nself.addEventListener('activate', function (event) {\n  event.waitUntil(caches.keys().then(function (cacheNames) {\n    return Promise.all(cacheNames.filter(function (cacheName) {\n      return cacheName.startsWith('bazaar-') && !allCaches.includes(cacheName);\n    }).map(function (cacheName) {\n      return caches.delete(cacheName);\n    }));\n  }));\n});\n\nself.addEventListener('fetch', function (event) {\n  var requestUrl = new URL(event.request.url);\n\n  if (requestUrl.origin === location.origin) {\n    if (requestUrl.pathname === '/') {\n      event.respondWith(caches.match('/index.html'));\n      return;\n    }\n  }\n\n  event.respondWith(caches.match(event.request).then(function (response) {\n    return response || fetch(event.request);\n  }));\n});\n\nself.addEventListener('message', function (event) {\n  if (event.data.action === 'skipWaiting') {\n    //\n    self.skipWaiting();\n  }\n});\n\n//# sourceURL=webpack:///./src/sw/index.js?");
 
 /***/ })
 

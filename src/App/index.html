@@ -1,3 +1,8 @@
 <div class="page-container">
   <router-view></router-view>
+  <md-snackbar md-position="left" :md-duration="isInfinity ? Infinity : duration" :md-active.sync="showSnackbar" md-persistent>
+    <span>New version available!</span>
+    <md-button class="md-primary" v-on:click="reflesh()">Reflesh</md-button>
+    <md-button class="md-accent" @click="showSnackbar = false">Dismiss</md-button>
+  </md-snackbar>
 </div>
